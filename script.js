@@ -30,6 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        info.innerHTML = "<p>" + produkty[indexProduktu][1] + "</p>";
+        info.innerHTML = "<img src='zdjecia/" + produkty[indexProduktu][6] + "'>";
     });
 });
