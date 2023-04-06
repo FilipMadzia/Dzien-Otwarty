@@ -27,5 +27,7 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
         <label for="kod">Zeskanuj kod produktu lub wpisz go ręcznie</label>
         <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
     </form>
+
+    <div id="info"></div>
 </body>
 </html>
