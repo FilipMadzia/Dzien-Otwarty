@@ -19,10 +19,13 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 
     while($row = mysqli_fetch_array($produkty)) {
         $produkt = json_encode($row);
-        echo "<script>addProduct(".$produkt.")</script>";
+        ?><script>addProduct(<?php echo $produkt;?>)</script><?php
     }
     ?>
 
-    <form></form>
+    <form id="skaner">
+        <label for="kod">Zeskanuj kod produktu lub wpisz go ręcznie</label>
+        <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
+    </form>
 </body>
 </html>
