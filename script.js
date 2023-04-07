@@ -18,9 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function aktualizujKoszyk(produkt) {
         koszyk.push(produkt);
+
+        koszykDiv.innerHTML = "";
+
         koszyk.forEach(produkt => {
             let produktChild = koszykDiv.appendChild(document.createElement("p"));;
-            produktChild.innerHTML = produkt.nazwa + " " + produkt.kod
+            produktChild.innerHTML = produkt.nazwa + " " + produkt.cena + " zł";
         });
     }
 
