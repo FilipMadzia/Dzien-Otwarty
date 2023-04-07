@@ -11,6 +11,7 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dzień Otwarty 2023</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 
     while($row = mysqli_fetch_array($produkty)) {
         $produkt = json_encode($row);
-        ?><script>addProduct(<?php echo $produkt;?>)</script><?php
+        ?><script>dodajProdukt(<?php echo $produkt;?>)</script><?php
     }
     ?>
 
@@ -28,8 +29,8 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
         <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
     </form>
 
-    <div id="koszyk">
-        <p id="suma">Suma: 0zł</p>
-    </div>
+    <div id="koszyk-div"></div>
+
+    <p id="cena">Suma: 0zł</p>
 </body>
 </html>

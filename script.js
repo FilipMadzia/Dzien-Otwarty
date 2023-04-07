@@ -1,22 +1,28 @@
 const produkty = [];
-const indexID = 0;
-const indexNazwy = 1;
-const indexKodu = 2;
-const indexDatyDodania = 3;
-const indexIDKategorii = 4;
-const indexCeny = 5;
-const indexZdjecia = 6;
+const koszyk = [];
 
-function addProduct(produkt) {
+function dodajProdukt(produkt) {
     produkty.push(produkt);
 }
 document.addEventListener("DOMContentLoaded", () => {
     const skaner = document.querySelector("#skaner");
     const kod = document.querySelector("#kod");
-    const koszyk = document.querySelector("#koszyk");
-    const sumaDiv = document.querySelector("#suma");
+    const cenaDiv = document.querySelector("#cena");
+    const koszykDiv = document.querySelector("#koszyk-div");
 
     let suma = 0;
+
+    function aktualizujCene(wartosc) {
+        suma += parseInt(wartosc);
+        cenaDiv.innerHTML = "Suma: " + suma + "zł";
+    }
+    function aktualizujKoszyk(produkt) {
+        koszyk.push(produkt);
+        koszyk.forEach(produkt => {
+            let produktChild = koszykDiv.appendChild(document.createElement("p"));;
+            produktChild.innerHTML = produkt.nazwa + " " + produkt.kod
+        });
+    }
 
     skaner.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -29,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // znajduje index produktu w tablicy
         for(let i = 0; i < produkty.length; i++) {
-            if(parseInt(produkty[i][2]) == kodProduktu) {
+            if(parseInt(produkty[i].kod) == kodProduktu) {
                 indexProduktu = i;
                 break;
             }
@@ -40,15 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        suma += parseInt(produkty[indexProduktu][indexCeny]);
-
-        sumaDiv.innerHTML = "Suma: " + suma + "zł";
+        aktualizujCene(produkty[indexProduktu].cena);
+        aktualizujKoszyk(produkty[indexProduktu]);
     });
 
     // zablokowanie odświeżania
     document.addEventListener("keydown", (e) => {
         if(e.key == "F5") {
-            if(!confirm("Odświeżenie spowoduje usunięcie zawartości koszyka!")) {
+            if(!confirm("Odświeżenie spowoduje usunięcie zawartości koszyka. Czy na pewno chcesz kontynuować?")) {
                 e.preventDefault();
             }
         }
