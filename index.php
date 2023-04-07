@@ -28,6 +28,8 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
         <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
     </form>
 
-    <div id="info"></div>
+    <div id="koszyk">
+        <p id="suma">Suma: 0zł</p>
+    </div>
 </body>
 </html>
