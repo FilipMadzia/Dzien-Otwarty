@@ -30,20 +30,20 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
     ?>
 
     <form id="skaner">
-        <label for="kod">Zeskanuj kod produktu lub wpisz go ręcznie</label>
+        <label for="kod">Zeskanuj produkt lub wpisz ręcznie kod produktu</label>
         <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
     </form>
 
     <div>
         <table id="koszyk-tabela">
             <tr>
-                <td>Nazwa</td>
+                <td>Produkt</td>
                 <td>Cena</td>
                 <td>Kategoria</td>
             </tr>
         </table>
     </div>
 
-    <p id="cena">Suma: 0zł</p>
+    <p>Suma: <span id="cena">0</span>zł</p>
 </body>
 </html>

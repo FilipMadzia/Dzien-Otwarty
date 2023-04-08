@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function aktualizujCene(wartosc) {
         suma += parseInt(wartosc);
-        cenaDiv.innerHTML = "Suma: " + suma + "zł";
+        cenaDiv.innerHTML = suma;
     }
     function aktualizujKoszyk(produkt) {
         koszyk.push(produkt);
