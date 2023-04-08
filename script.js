@@ -1,14 +1,18 @@
 const produkty = [];
+const kategorie = [];
 const koszyk = [];
 
 function dodajProdukt(produkt) {
     produkty.push(produkt);
 }
+function dodajKategorie(kategoria) {
+    kategorie.push(kategoria);
+}
 document.addEventListener("DOMContentLoaded", () => {
     const skaner = document.querySelector("#skaner");
     const kod = document.querySelector("#kod");
     const cenaDiv = document.querySelector("#cena");
-    const koszykDiv = document.querySelector("#koszyk-div");
+    const koszykTabela = document.querySelector("#koszyk-tabela");
 
     let suma = 0;
 
@@ -19,12 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function aktualizujKoszyk(produkt) {
         koszyk.push(produkt);
 
-        koszykDiv.innerHTML = "";
-
-        koszyk.forEach(produkt => {
-            let produktChild = koszykDiv.appendChild(document.createElement("p"));;
-            produktChild.innerHTML = produkt.nazwa + " " + produkt.cena + " zł";
-        });
+        let produktChild = koszykTabela.appendChild(document.createElement("tr"));
+        produktChild.innerHTML = 
+            "<td>" + produkt.nazwa + "</td>" +
+            "<td>" + produkt.cena + "</td>" +
+            "<td>" + kategorie[produkt.id_kategoria-1].nazwa + "</td>";
     }
 
     skaner.addEventListener("submit", (e) => {
@@ -53,9 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
         aktualizujKoszyk(produkty[indexProduktu]);
     });
 
-    // zablokowanie odświeżania
+    // zablokowanie odświeżania gdy koszyk nie jest pusty
     document.addEventListener("keydown", (e) => {
-        if(e.key == "F5") {
+        if(e.key == "F5" && koszyk.length > 0) {
             if(!confirm("Odświeżenie spowoduje usunięcie zawartości koszyka. Czy na pewno chcesz kontynuować?")) {
                 e.preventDefault();
             }

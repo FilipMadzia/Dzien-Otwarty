@@ -17,10 +17,15 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 <body>
     <?php
     $produkty = mysqli_query($conn, "SELECT * FROM produkt");
+    $kategorie = mysqli_query($conn, "SELECT * FROM kategoria");
 
     while($row = mysqli_fetch_array($produkty)) {
         $produkt = json_encode($row);
         ?><script>dodajProdukt(<?php echo $produkt;?>)</script><?php
+    }
+    while($row = mysqli_fetch_array($kategorie)) {
+        $kategoria = json_encode($row);
+        ?><script>dodajKategorie(<?php echo $kategoria;?>)</script><?php
     }
     ?>
 
@@ -29,7 +34,15 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
         <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
     </form>
 
-    <div id="koszyk-div"></div>
+    <div>
+        <table id="koszyk-tabela">
+            <tr>
+                <td>Nazwa</td>
+                <td>Cena</td>
+                <td>Kategoria</td>
+            </tr>
+        </table>
+    </div>
 
     <p id="cena">Suma: 0zł</p>
 </body>
