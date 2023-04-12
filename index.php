@@ -36,18 +36,16 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
         <a href="dodaj">Dodaj produkt</a>
     </form>
 
-    <div>
-        <table id="koszyk-tabela">
-            <tr>
-                <td>Podgląd</td>
-                <td>ID</td>
-                <td>Produkt</td>
-                <td>Kod</td>
-                <td>Kategoria</td>
-                <td>Cena</td>
-            </tr>
-        </table>
-    </div>
+    <table id="koszyk-tabela">
+        <tr>
+            <td>Podgląd</td>
+            <td>ID</td>
+            <td>Produkt</td>
+            <td>Kod</td>
+            <td>Kategoria</td>
+            <td>Cena</td>
+        </tr>
+    </table>
 
     <p>Suma: <span id="cena">0</span>zł</p>
 </body>
