@@ -32,14 +32,19 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
     <form id="skaner">
         <label for="kod">Zeskanuj produkt lub wpisz ręcznie kod produktu</label>
         <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
+        <!-- Przycisk dodania -->
+        <a href="dodaj">Dodaj produkt</a>
     </form>
 
     <div>
         <table id="koszyk-tabela">
             <tr>
+                <td>Podgląd</td>
+                <td>ID</td>
                 <td>Produkt</td>
-                <td>Cena</td>
+                <td>Kod</td>
                 <td>Kategoria</td>
+                <td>Cena</td>
             </tr>
         </table>
     </div>

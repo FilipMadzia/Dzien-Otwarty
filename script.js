@@ -25,9 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let produktChild = koszykTabela.appendChild(document.createElement("tr"));
         produktChild.innerHTML = 
+            "<td><img src='zdjecia/" + produkt.zdjecie + "'></td>" +
+            "<td>" + produkt.id_produkt + "</td>" +
             "<td>" + produkt.nazwa + "</td>" +
-            "<td>" + produkt.cena + "</td>" +
-            "<td>" + kategorie[produkt.id_kategoria-1].nazwa + "</td>";
+            "<td>" + produkt.kod + "</td>" +
+            "<td>" + kategorie[produkt.id_kategoria-1].nazwa + "</td>" +
+            "<td>" + produkt.cena + "</td>";
     }
 
     skaner.addEventListener("submit", (e) => {
