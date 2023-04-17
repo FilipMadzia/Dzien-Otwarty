@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "<td>" + produkt.nazwa + "</td>" +
             "<td>" + kategorie[produkt.id_kategoria-1].nazwa + "</td>" +
             "<td>" + produkt.cena + "</td>";
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     zaplac.addEventListener("click", () => {

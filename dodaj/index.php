@@ -69,6 +69,7 @@ if(!isset($_SESSION["login"])) {
                 "<td>".$kategoria["nazwa"]."</td>".
                 "<td>".$row["cena"]."</td>".
                 "<td>".$row["data_dodania"]."</td>".
+                "<td><a href='remove_handler.php?produkt=".$row["id_produkt"]."'>Usuń</a></td>".
             "</tr>";
         }
         ?>
