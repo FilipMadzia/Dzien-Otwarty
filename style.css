@@ -5,3 +5,6 @@ td {
 img {
     height: 50px;
 }
+#error-message {
+    color: #ff0000;
+}

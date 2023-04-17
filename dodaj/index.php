@@ -19,6 +19,13 @@ if(!isset($_SESSION["login"])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <p id="error-message"><?php
+        if(isset($_SESSION["error"])){
+            echo $_SESSION["error"];
+            $_SESSION["error"] = "";
+        }
+    ?></p>
+
     <form method="post" action="add_handler.php" enctype="multipart/form-data">
         <label for="nazwa">Nazwa</label>
         <input type="text" name="nazwa" id="nazwa" required><br>
