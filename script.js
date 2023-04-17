@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const kod = document.querySelector("#kod");
     const cenaDiv = document.querySelector("#cena");
     const koszykTabela = document.querySelector("#koszyk-tabela");
+    const zaplac = document.querySelector("#zaplac");
 
     let suma = 0;
 
@@ -26,12 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
         let produktChild = koszykTabela.appendChild(document.createElement("tr"));
         produktChild.innerHTML = 
             "<td><img src='zdjecia/" + produkt.zdjecie + "'></td>" +
-            "<td>" + produkt.id_produkt + "</td>" +
             "<td>" + produkt.nazwa + "</td>" +
-            "<td>" + produkt.kod + "</td>" +
             "<td>" + kategorie[produkt.id_kategoria-1].nazwa + "</td>" +
             "<td>" + produkt.cena + "</td>";
     }
+
+    zaplac.addEventListener("click", () => {
+        koszyk.length = 0;
+        const children = koszykTabela.children;
+        // usuwanie wszystkich dzieci w koszuku prócz pierwszego, aby została tabela z nazwami pól
+        for(let i = children.length - 1; i > 0; i--) {
+            koszykTabela.removeChild(children[i]);
+        }
+        suma = 0;
+        cenaDiv.innerHTML = 0;
+    });
 
     skaner.addEventListener("submit", (e) => {
         e.preventDefault();

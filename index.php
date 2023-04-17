@@ -39,14 +39,13 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
     <table id="koszyk-tabela">
         <tr>
             <td>Podgląd</td>
-            <td>ID</td>
             <td>Produkt</td>
-            <td>Kod</td>
             <td>Kategoria</td>
             <td>Cena</td>
         </tr>
     </table>
 
     <p>Suma: <span id="cena">0</span>zł</p>
+    <button id="zaplac">Zapłać</button>
 </body>
 </html>

@@ -19,7 +19,7 @@ if(!isset($_SESSION["login"])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <form method="post" action="add_handler.php">
+    <form method="post" action="add_handler.php" enctype="multipart/form-data">
         <label for="nazwa">Nazwa</label>
         <input type="text" name="nazwa" id="nazwa" required><br>
         <label for="kod">Kod</label>
@@ -37,6 +37,8 @@ if(!isset($_SESSION["login"])) {
         </select><br>
         <label for="cena">Cena</label>
         <input type="number" name="cena" id="cena" required><br>
+        <label for="zdjecie">Zdjęcie</label>
+        <input type="file" name="zdjecie" id="zdjecie"><br>
 
         <input type="submit" value="Dodaj">
     </form><br>
