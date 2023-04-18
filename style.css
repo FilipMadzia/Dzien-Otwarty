@@ -1,10 +1,14 @@
-td {
-    border: 1px solid #000000;
-    text-align: center;
-}
 img {
     height: 50px;
 }
 #error-message {
     color: #ff0000;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+.info {
+    height: 100vh;
+    border-left: 3px solid #606060;
 }

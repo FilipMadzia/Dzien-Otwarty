@@ -1,12 +1,8 @@
 const produkty = [];
-const kategorie = [];
 const koszyk = [];
 
 function dodajProdukt(produkt) {
     produkty.push(produkt);
-}
-function dodajKategorie(kategoria) {
-    kategorie.push(kategoria);
 }
 document.addEventListener("DOMContentLoaded", () => {
     const skaner = document.querySelector("#skaner");
@@ -28,8 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         produktChild.innerHTML = 
             "<td><img src='zdjecia/" + produkt.zdjecie + "'></td>" +
             "<td>" + produkt.nazwa + "</td>" +
-            "<td>" + kategorie[produkt.id_kategoria-1].nazwa + "</td>" +
-            "<td>" + produkt.cena + "</td>";
+            "<td>" + produkt.cena + "zł</td>";
         window.scrollTo(0, document.body.scrollHeight);
     }
 
