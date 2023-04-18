@@ -1,8 +1,22 @@
 const produkty = [];
 const koszyk = [];
 
+let inputToggle = false;
+
 function dodajProdukt(produkt) {
     produkty.push(produkt);
+}
+function toggleScanner() {
+    const kod = document.querySelector("#kod");
+    if(inputToggle) {
+        kod.style.position = "absolute";
+        kod.style.left = "-1000px";
+        inputToggle = false;
+    }
+    else {
+        kod.style.position = "static";
+        inputToggle = true;
+    }
 }
 document.addEventListener("DOMContentLoaded", () => {
     const skaner = document.querySelector("#skaner");

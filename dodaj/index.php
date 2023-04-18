@@ -19,7 +19,7 @@ if(!isset($_SESSION["login"])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <p id="error-message"><?php
+    <p class="error-message"><?php
         if(isset($_SESSION["error"])){
             echo $_SESSION["error"];
             $_SESSION["error"] = "";

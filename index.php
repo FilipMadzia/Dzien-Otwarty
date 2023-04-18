@@ -27,7 +27,7 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-8 col-sm-12">
+            <div class="koszyk col-lg-4 col-md-8 col-sm-12">
                 <table id="koszyk-tabela">
                     <tr>
                         <td>Podgląd</td>
@@ -38,16 +38,19 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
             </div>
 
             <div class="info col-lg-4 col-md-8 col-sm-12">
+                <h1><img class="approve" src="zdjecia/approve.png"> Symulator Kasy <img class="approve" src="zdjecia/approve.png"></h1>
+                
                 <form id="skaner">
-                    <label for="kod">Zeskanuj produkt lub wpisz ręcznie kod produktu</label>
-                    <input onblur="focus()" type="text" name="kod" id="kod" autofocus>
-                    <a href="dodaj">Dodaj produkt</a>
+                    <p>Chcesz wpisać kod ręcznie? Kliknij <span onclick="toggleScanner()" class="btn btn-secondary">tutaj</span></p>
+                    <input onblur="focus()" type="text" name="kod" id="kod" autofocus placeholder="Wpisz kod">
                 </form>
+
+                <a href="dodaj">Dodaj produkt</a>
                 
                 <div class="footer">
                     <table>
                         <tr>
-                            <td>Suma: <span id="cena">0</span>zł</td>
+                            <td><h4>Suma: <span id="cena">0</span>zł</h4></td>
                             <td><button class="btn btn-success" id="zaplac">Zapłać</button></td>
                         </tr>
                     </table>

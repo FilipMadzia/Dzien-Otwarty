@@ -1,14 +1,29 @@
 img {
     height: 50px;
 }
-#error-message {
+#kod {
+    position: absolute;
+    left: -1000px;
+}
+.koszyk {
+    overflow: auto;
+    height: 100vh;
+}
+.error-message {
     color: #ff0000;
 }
 .footer {
     position: absolute;
     bottom: 0;
 }
+.footer table tr td {
+    padding: 10px;
+}
 .info {
     height: 100vh;
     border-left: 3px solid #606060;
+}
+.approve {
+    border-radius: 50px;
+    box-shadow: 0 0 10px #000000;
 }
