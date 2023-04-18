@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const skaner = document.querySelector("#skaner");
     const kod = document.querySelector("#kod");
     const cenaDiv = document.querySelector("#cena");
+    const koszykDiv = document.querySelector(".koszyk");
     const koszykTabela = document.querySelector("#koszyk-tabela");
     const zaplac = document.querySelector("#zaplac");
 
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "<td><img src='zdjecia/" + produkt.zdjecie + "'></td>" +
             "<td>" + produkt.nazwa + "</td>" +
             "<td>" + produkt.cena + "zł</td>";
-        window.scrollTo(0, document.body.scrollHeight);
+        koszykDiv.scrollTo(0, koszykDiv.scrollHeight);
     }
 
     zaplac.addEventListener("click", () => {
