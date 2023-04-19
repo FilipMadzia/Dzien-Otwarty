@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         rachunek.style.position = "absolute";
         rachunek.style.width = "20%";
-        rachunek.style.height = "50%";
+        rachunek.style.height = "500px";
         rachunek.style.top = "100px";
         rachunek.style.left = "40%";
         rachunek.style.border = "1px solid black";
@@ -70,8 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         rachunek.innerHTML = "<h3 class='text-center'>Rachunek</h3>" +
-            "<button onclick='usunRachunek()' style='position: absolute; right: 0; top: 0; width: 50px; height: 50px; border-radius: 50px;' class='btn'>X</button>" +
-            "<div style='height: 100px; overflow-y: auto;'>";
+            "<button onclick='usunRachunek()' style='position: absolute; right: 0; top: 0; width: 50px; height: 50px; border-radius: 50px;' class='btn'>X</button>";
+
+        let kupione = rachunek.appendChild(document.createElement("div"));
+        kupione.style.overflowY = "auto";
+        kupione.style.height = "400px";
         
         for(let i = 0; i < produkty.length; i++) {
             let ilosc = 0;
@@ -83,55 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if(ilosc > 0) {
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
-                rachunek.innerHTML += "<p>" + produkty[i].nazwa + " " + produkty[i].cena +  "zł x " + ilosc + " " + "<span style='position: absolute; right: 10px'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
+                kupione.innerHTML += "<p>" + produkty[i].nazwa + " | " + ilosc + " x " + produkty[i].cena +  "zł " + " " + "<span style='float: right;'>" + parseFloat(ilosc) * produkty[i].cena + "zł</span></p>";
             }
         }
 
-        rachunek.innerHTML += "</div><h5 style='position: absolute; left: 10px; bottom: 0'>Suma: " + suma + "zł</h5>";
+        rachunek.innerHTML += "<h5 style='position: absolute; left: 10px; bottom: 0'>Suma: " + suma + "zł</h5>";
 
         suma = 0;
         cenaDiv.innerHTML = 0;
