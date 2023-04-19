@@ -27,8 +27,8 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="koszyk col-lg-4 col-md-8 col-sm-12">
-                <table id="koszyk-tabela">
+            <div class="koszyk col-lg-6 col-md-6 col-sm-12">
+                <table class="koszyk-tabela">
                     <tr>
                         <td>Podgląd</td>
                         <td>Produkt</td>
@@ -37,15 +37,18 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
                 </table>
             </div>
 
-            <div class="info col-lg-4 col-md-8 col-sm-12">
-                <h1><img class="approve" src="zdjecia/approve.png"> Symulator Kasy <img class="approve" src="zdjecia/approve.png"></h1>
+            <div class="info col-lg-6 col-md-6 col-sm-12">
+                <h1><img class="emoji" src="zdjecia/approve.png"> Symulator Kasy <img class="emoji" src="zdjecia/approve.png"></h1>
                 
                 <form id="skaner">
                     <p>Chcesz wpisać kod ręcznie? Kliknij <span onclick="toggleScanner()" class="btn btn-secondary">tutaj</span></p>
                     <input onblur="focus()" type="text" name="kod" id="kod" autofocus placeholder="Wpisz kod">
                 </form>
 
-                <a href="dodaj">Dodaj produkt</a>
+                <h3>Kliknij mnie, aby dodaj nowy produkt</h3>
+                <a href="dodaj">
+                    <img style="width: 100%; height: auto;" src="zdjecia/smile.png">
+                </a>                
                 
                 <div class="footer">
                     <table>

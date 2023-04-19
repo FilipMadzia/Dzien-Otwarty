@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const kod = document.querySelector("#kod");
     const cenaDiv = document.querySelector("#cena");
     const koszykDiv = document.querySelector(".koszyk");
-    const koszykTabela = document.querySelector("#koszyk-tabela");
+    const koszykTabela = document.querySelector(".koszyk-tabela");
     const zaplac = document.querySelector("#zaplac");
 
     let suma = 0;
@@ -38,20 +38,36 @@ document.addEventListener("DOMContentLoaded", () => {
         let produktChild = koszykTabela.appendChild(document.createElement("tr"));
         produktChild.innerHTML = 
             "<td><img src='zdjecia/" + produkt.zdjecie + "'></td>" +
-            "<td>" + produkt.nazwa + "</td>" +
-            "<td>" + produkt.cena + "zł</td>";
+            "<td style='font-weight: bold'>" + produkt.nazwa + "</td>" +
+            "<td style='font-weight: bold'>" + produkt.cena + "zł</td>";
         koszykDiv.scrollTo(0, koszykDiv.scrollHeight);
     }
 
     zaplac.addEventListener("click", () => {
-        koszyk.length = 0;
-        const children = koszykTabela.children;
-        // usuwanie wszystkich dzieci w koszuku prócz pierwszego, aby została tabela z nazwami pól
-        for(let i = children.length - 1; i > 0; i--) {
-            koszykTabela.removeChild(children[i]);
-        }
-        suma = 0;
-        cenaDiv.innerHTML = 0;
+        let rachunek = document.body.appendChild(document.createElement("div"));
+        let container = document.querySelector(".container");
+        
+        rachunek.style.position = "absolute";
+        rachunek.style.width = "20%";
+        rachunek.style.height = "50%";
+        rachunek.style.top = "100px";
+        rachunek.style.left = "40%";
+        rachunek.style.border = "1px solid black";
+        rachunek.style.backgroundColor = "white";
+        container.style.filter = "blur(10px)";
+
+
+        rachunek.innerHTML = "<h3 class='text-center'>Rachunek</h3>" +
+            "<button onclick='() = > {document.body.removeChild(document.body.lastChild); container.style.filter = 'blur(10px)'}' style='position: absolute; right: 0; top: 0; width: 50px; height: 50px; border-radius: 50px;' class='btn'>X</button>";
+
+        // koszyk.length = 0;
+        // const children = koszykTabela.children;
+        // // usuwanie wszystkich dzieci w koszuku prócz pierwszego, aby została tabela z nazwami pól
+        // for(let i = children.length - 1; i > 0; i--) {
+        //     koszykTabela.removeChild(children[i]);
+        // }
+        // suma = 0;
+        // cenaDiv.innerHTML = 0;
     });
 
     skaner.addEventListener("submit", (e) => {

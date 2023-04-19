@@ -1,13 +1,17 @@
 img {
     height: 50px;
 }
-#kod {
+#skaner #kod {
     position: absolute;
     left: -1000px;
 }
 .koszyk {
     overflow-y: auto;
     height: 100vh;
+}
+.koszyk-tabela {
+    width: 100%;
+    text-align: center;
 }
 .error-message {
     color: #ff0000;
@@ -23,7 +27,7 @@ img {
     height: 100vh;
     border-left: 3px solid #606060;
 }
-.approve {
+.emoji {
     border-radius: 50px;
     box-shadow: 0 0 10px #000000;
 }
