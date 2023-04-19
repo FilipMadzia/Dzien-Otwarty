@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Kwi 2023, 18:43
+-- Czas generowania: 19 Kwi 2023, 22:59
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.5
 
@@ -59,14 +59,6 @@ CREATE TABLE `produkt` (
   `zdjecie` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Zrzut danych tabeli `produkt`
---
-
-INSERT INTO `produkt` (`id_produkt`, `nazwa`, `kod`, `data_dodania`, `id_kategoria`, `cena`, `zdjecie`) VALUES
-(1, 'Mistrz czystego kodu. Kodeks postępowania profesjonalnych programistów', '9788328382961', '2023-04-06', 1, '49.00', 'mistrz_kodu.png'),
-(2, 'Algorytmy struktury danych i techniki programowania', '9788328353749', '2023-04-06', 1, '59.00', 'algorytmy.png');
-
 -- --------------------------------------------------------
 
 --
@@ -85,7 +77,7 @@ CREATE TABLE `uzytkownik` (
 --
 
 INSERT INTO `uzytkownik` (`id_uzytkownik`, `login`, `haslo`, `data_dodania`) VALUES
-(1, 'jachaś', 'pizza', '2023-04-06');
+(1, 'kamil-zdun', 'bomba-w-szkole', NULL);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -124,7 +116,7 @@ ALTER TABLE `kategoria`
 -- AUTO_INCREMENT dla tabeli `produkt`
 --
 ALTER TABLE `produkt`
-  MODIFY `id_produkt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_produkt` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownik`

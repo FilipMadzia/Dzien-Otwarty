@@ -12,7 +12,7 @@ if($id_produkt <= $max_min_id[0] && $id_produkt > 0){
     $result = mysqli_query($conn, "DELETE FROM produkt WHERE id_produkt = '$id_produkt'");
 }
 else {
-    $_SESSION["error"] = "Nie oszukuj! 😡";
+    $_SESSION["error"] = "Nie oszukuj!<img src='../zdjecia/angry.png'>";
 }
 
 header("Location: ../dodaj");

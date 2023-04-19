@@ -125,6 +125,12 @@ if(!isset($_SESSION["login"])) {
 
             <div class="info koszyk col-lg-6 col-md-6 col-sm-12">
                 <h3 class="text-center">Produkty w bazie</h3>
+                    <h1 class="text-center error-message"><?php
+                        if(isset($_SESSION["error"])) {
+                            echo $_SESSION["error"];
+                            $_SESSION["error"] = "";
+                        }
+                    ?></h1>
                     <table class="koszyk-tabela">
                         <tr>
                         <td>Podgląd</td>
